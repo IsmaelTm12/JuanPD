@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #000;
+    overflow: hidden;
+}
+
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10px;
+    max-width: 90%;
+}
+
+
+.content h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: glow 2s infinite alternate;
+}
+
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #d41f1f, 0 0 10px #ac2727, 0 0 15px #8f1c0d, 0 0 20px #a7200f, 0 0 25px #11c70a, 0 0 30px #00ffea, 0 0 40px #30c712;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d400, 0 0 20px #c21e1e, 0 0 30px #0fc909, 0 0 40px #39c90d, 0 0 50px #df4226, 0 0 60px #20cf10, 0 0 70px #00ffea;
+    }
+}
+
+
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #921111;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+.content a:hover {
+    background-color: #0077cc;
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.5rem; 
+    }
+
+    .content a {
+        font-size: 1rem; 
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 1.8rem; 
+    }
+
+    .content a {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
